@@ -1,0 +1,45 @@
+// Taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
+$link-color: #818181;
+.sidebar {
+    .menu {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        right: 0;
+        background-image: url('../../../../../assets/textures/project-paper.png');
+        background-repeat: repeat;
+        background-color: black;
+        overflow-x: hidden;
+        transition: 0.5s width;
+        padding-top: 60px;
+        /* Menu links*/
+        a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.5s color;
+            &:hover {
+                color: lighten($link-color, 20%);
+            }
+        }
+    }
+    .open-btn {
+        color: white;
+        font-size: 30px;
+        margin-top: 5px;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+    #sidebar .close-btn {
+        position: absolute;
+        cursor: pointer;
+        margin-top: -20px;
+        top: 0;
+        right: 5px;
+        font-size: 40px;
+    }
+}

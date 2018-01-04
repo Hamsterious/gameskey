@@ -1,0 +1,87 @@
+<div class="row section">
+  <div class="col">
+
+    <div class="overview-section">
+
+      <div class="video-background">
+        <div class="video-foreground">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/cklw-Yu3moE?rel=0&amp;loop=1&amp;playlist=cklw-Yu3moE&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;start=6"
+            frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+        </div>
+      </div>
+
+      <div id="vidtop-content">
+
+        <h2 class="center-title">
+          <div class="background-box">
+            {{ game.title }}
+          </div>
+        </h2>
+
+        <div class="row ">
+
+          <!-- left side content -->
+          <div class="col-sm-6 ">
+            <img class="img-fluid " [src]="game.coverPictureUrl " />
+          </div>
+
+          <!-- right side content -->
+          <div class="col-sm-6">
+            <p class="game-summary background-box ">{{ game.gameSummary }}</p>
+            <div class="facts-table background-box">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th>Price</th>
+                    <td>{{ game.price }} {{ game.priceValuta }}</td>
+                  </tr>
+                  <tr>
+                    <th>Developer</th>
+                    <td>
+                      <a [href]="game.developer.site">{{ game.developer.name }}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Publisher</th>
+                    <td>
+                      <a [href]="game.publisher.site">{{ game.publisher.name }}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Platforms</th>
+                    <td>
+                      <div *ngFor="let platform of game.platforms">{{ platform.name }}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Regions</th>
+                    <td>
+                      <div *ngFor="let region of game.regions">{{ region.name }}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Age rating</th>
+                    <td>{{ game.ageRating }}</td>
+                  </tr>
+                  <tr>
+                    <th>Genres</th>
+                    <td>
+                      <div *ngFor="let genre of game.genres">{{ genre.name }}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Tags</th>
+                    <td>
+                      <div *ngFor="let tag of game.tags">{{ tag.name }}</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

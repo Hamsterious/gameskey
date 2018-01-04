@@ -1,0 +1,117 @@
+<div class="create-game-wrapper">
+    <div class="row">
+        <div class="column">
+            <div *ngIf="!game; else formInfo">
+                <form [formGroup]="gameForm" class="gameForm" (ngSubmit)="addGame(gameForm.value)">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <div class="input-group">
+                            <input type="text" id="title" class="form-control" [ngClass]="{error: (!gameForm.controls['title'].valid &&
+                                          gameForm.controls['title'].touched), success: (gameForm.controls['title'].valid && gameForm.controls['title'].touched)}" formControlName="title" placeholder="Spil navn">
+                            <span class="input-group-addon">*</span>
+                        </div>
+                        <div class="alert" *ngIf="!gameForm.controls['title'].valid && gameForm.controls['title'].touched">
+                            En spiltitel er påkrævet
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shortDescription">Kort beskrivelse</label>
+                        <div class="input-group">
+                            <textarea class="form-control" id="shortDescription" [ngClass]="{error: (!gameForm.controls['shortDescription'].valid &&
+                          gameForm.controls['shortDescription'].touched), success: (gameForm.controls['shortDescription'].valid && gameForm.controls['shortDescription'].touched)}" formControlName="shortDescription" placeholder="Kort beskrivelse"></textarea>
+                            <span class="input-group-addon">*</span>
+                        </div>
+                        <div class="alert" *ngIf="!gameForm.controls['shortDescription'].valid && gameForm.controls['shortDescription'].touched">
+                            You must specify a short description that's between 30 and 200 characters.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Fuld Beskrivelse</label>
+                        <div class="input-group">
+                            <textarea class="form-control" id="description" rows="5" [ngClass]="{error: (!gameForm.controls['description'].valid &&
+                          gameForm.controls['description'].touched), success: (gameForm.controls['description'].valid && gameForm.controls['description'].touched)}" formControlName="description" placeholder="Fuld beskrivelse"></textarea>
+                            <span class="input-group-addon">*</span>
+                        </div>
+                        <div class="alert" *ngIf="!gameForm.controls['description'].valid && gameForm.controls['description'].touched">
+                            En beskrivelse er påkrævet
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Pris</label>
+                        <div class="input-group">
+                            <input type="text" id="price" class="form-control" [ngClass]="{error: (!gameForm.controls['price'].valid &&
+                                gameForm.controls['price'].touched), success: (gameForm.controls['price'].valid && gameForm.controls['price'].touched)}" formControlName="price" placeholder="Pris">
+                            <span class="input-group-addon">*</span>
+                        </div>
+                        <div class="alert" *ngIf="!gameForm.controls['price'].valid && gameForm.controls['price'].touched">
+                            En pris er påkrævet
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="release">Udgivelsesdato</label>
+                        <div class="input-group">
+                            <input type="date" id="release" formControlName="release" [ngClass]="{error: (!gameForm.controls['release'].valid &&
+                          gameForm.controls['release'].touched), success: (gameForm.controls['release'].valid && gameForm.controls['release'].touched)}" class="form-control">
+                            <span class="input-group-addon">*</span>
+                        </div>
+                        <div class="gameForm__alert" *ngIf="!gameForm.controls['release'].valid && gameForm.controls['release'].touched">
+                            En udgivelsesdato er påkrævet
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <p>Remember the cover must be in the 16:9 aspect. Click
+                            <a href="https://pacoup.com/2011/06/12/list-of-true-169-resolutions/">here</a> for a list of proper 16:9 resolutions. The min width and height should be 512px and 288px. You can use
+                            <a href="https://imageresize.org/">Imageresize.org</a> to crop your picture.
+                        </p>
+
+                        <div id="myDrop" class="dragndrop dragndrop__borders dropzone">
+                            <div class="dz-message center" data-dz-message>
+                                <i class="fa fa-plus fa-2x"></i>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div id="tpl" style="display:none">
+                            <div class="dz-preview dz-image-preview">
+                                <div class="dz-image">
+                                    <img id="previewImg" data-dz-thumbnail src="" />
+                                </div>
+                                <div class="dz-details">
+                                    <div class="dz-filename">
+                                        <span data-dz-name></span>
+                                    </div>
+                                    <div class="dz-size" data-dz-size></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <small id="ProductImageHelp" class="form-text text-muted">Det primære produktbillede</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Opret spil</button>
+                </form>
+            </div>
+
+            <ng-template #formInfo>
+                <div class="container" style="height:auto;padding:15px;width:100%;border:1px solid black;">
+                    <p>
+                        <b>{{ game.title }}</b>
+                    </p>
+                    <p>{{ game.shortDescription }}</p>
+                    <p>{{ game.description }}</p>
+                    <p>{{ game.price }}</p>
+                    <p>{{ game.release }}</p>
+                    <img src="{{game.picture.dataURL}}" height="175" width="175" />
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

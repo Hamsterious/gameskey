@@ -1,0 +1,53 @@
+<div class="row section">
+    <div class="col">
+        <div class="details-section">
+
+            <h2 class="center-title">
+                <div class="background-box">The forest is dying...</div>
+            </h2>
+
+            <p class="background-box">
+                {{ game.history }}
+            </p>
+
+            <!-- Introduktion Historie Features -->
+            <div class="row ">
+                <!-- left side content -->
+                <div class="col-sm-6">
+                    <h3 class="center-title">
+                        <div class="background-box">World</div>
+                    </h3>
+                    <p class="background-box">{{ game.world }}</p>
+                </div>
+                <!-- right side content -->
+                <div class="col-sm-6">
+                    <h3 class="center-title">
+                        <div class="background-box">Characters</div>
+                    </h3>
+                    <div class="background-box characters">
+                        <!-- START CAROUSEL -->
+                        <div id="character-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let character of game.characters; let isFirst = first" [class.active]="isFirst">
+                                    <img class="d-block" [src]="character.pictureUrl" />
+                                    <div class="carousel-caption">
+                                        <h5>{{ character.name }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#character-carousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#character-carousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!-- END CAROUSEL -->
+                    </div>
+                </div>
+            </div>
+        </div>>
+    </div>
+</div>

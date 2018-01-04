@@ -1,0 +1,12 @@
+<div class="frontpage clearfix">
+    <div class="row">
+        <div class="col">
+            <div class="games-wrapper">
+                <h1 class="display-4 center">What is your next experience?</h1>
+                <div class="game" *ngFor="let game of games | async">
+                    <a [routerLink]="['/game', game.id]"><img src="{{pictureEndpoint}}/{{game.pictureId}}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

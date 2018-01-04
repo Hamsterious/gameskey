@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="photo col-12 col-sm-6">
+      <img src="{{pictureEndpoint}}/{{(game | async)?.pictureId}}" height="300" width="100%" />
+    </div>
+    <div class="col-12 col-sm-6">
+      <span class="shortDescription">{{(game | async)?.shortDescription}}</span>
+    </div>
+  </div>
+</div>

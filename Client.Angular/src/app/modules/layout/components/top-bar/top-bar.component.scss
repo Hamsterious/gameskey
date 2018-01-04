@@ -1,0 +1,14 @@
+@import '~styles.scss';
+.top-bar {
+    height: 50px;
+    margin-bottom: 50px;
+    background-image: url('../../../../../assets/textures/pixel-weave.png');
+    background-repeat: repeat;
+    background-color: black;
+    .logo {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        color: rgb(204, 204, 204);
+        text-decoration: none;
+    }
+}

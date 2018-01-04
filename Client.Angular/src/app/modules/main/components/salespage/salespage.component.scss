@@ -1,0 +1,21 @@
+.photo{
+    height:300px;
+    border: 1px solid black;
+    margin:0;
+    padding:0;
+}
+.gametitle{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    font-weight:bolder;
+    text-transform: uppercase;
+}
+.shortDescription{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    font-weight:bolder;
+}

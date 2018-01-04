@@ -1,0 +1,31 @@
+<div class="game">
+
+    <app-overview-section [game]="game"></app-overview-section>
+
+    <div *ngFor="let section of sections">
+
+        <div *ngIf="section.type == 1">
+            <app-details-section [game]="game"></app-details-section>
+        </div>
+
+        <div *ngIf="section.type == 2">
+            <app-media-section [game]="game"></app-media-section>
+        </div>
+
+        <div *ngIf="section.type == 3">
+            <app-extras-section [game]="game"></app-extras-section>
+        </div>
+
+        <div *ngIf="section.type == 4">
+            <app-critique-section [game]="game"></app-critique-section>
+        </div>
+
+        <div *ngIf="section.type == 5">
+            <app-practical-section [game]="game"></app-practical-section>
+        </div>
+    </div>
+
+    <app-buy-section [game]="game"></app-buy-section>
+    <app-recommended-section [game]="game"></app-recommended-section>
+
+</div>

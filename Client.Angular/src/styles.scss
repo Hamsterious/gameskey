@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+@charset 'UTF-8';
+@import 'assets/sass/abstracts/variables';
+@import 'assets/sass/abstracts/functions';
+@import 'assets/sass/abstracts/mixins';
+body {
+    background-image: url('/assets/textures/bright-squares.png');
+    background-repeat: repeat;
+    background-color: black;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+label,
+span,
+div {
+    color: white;
+}
+
+
+/*
+    Creates a black, semi-transparent background to ensure readability.
+*/
+
+.background-box {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    display: inline-block;
+}
+
+
+/*
+    Styles a center title.
+*/
+
+.center-title {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 50px;
+    font-size: 52px;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row" style="height:150px;width:100%;border-bottom:1px solid black;padding:15px 0" *ngFor="let game of basket | async">
+    <div class="col-3">
+      <img src="{{pictureEndpoint}}/{{game.pictureId}}" height="120" width="200" />
+    </div>
+    <div class="col-2" style="display:flex;align-items:center;">
+      <span style="font-weight:bolder">{{game.title}}</span>
+    </div>
+    <div class="col-7" style="margin:0;padding:0;display:flex;align-items:center;justify-content:flex-end">
+      <span class="pull-right">{{game.price}}.00 EUR</span>
+    </div>
+  </div>
+</div>
+<div class="container" style="padding-top:20px; padding-bottom:20px;">
+  <div class="row" style="padding:10px 0">
+    <div class="col-12">
+      <span class="pull-right" style="padding-right:15px">{{totalPrice}}.00 EUR</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" style="padding:0 20px 30px 20px">
+      <button type="button" class="btn btn-success pull-right">Gå til betaling</button>
+    </div>
+  </div>
+</div>

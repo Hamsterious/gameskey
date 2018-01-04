@@ -1,0 +1,8 @@
+@import '../../../../../../assets/sass/abstracts/mixins';
+.section {
+    background: rgb(186, 168, 255);
+}
+
+.buy-section {
+    @include game-section();
+}

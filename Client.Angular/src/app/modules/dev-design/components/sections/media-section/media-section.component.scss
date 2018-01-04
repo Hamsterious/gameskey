@@ -1,0 +1,8 @@
+@import '../../../../../../assets/sass/abstracts/mixins';
+.section {
+    @include responsive-background-image('/assets/ori-mock-data/tree.jpg');
+}
+
+.media-section {
+    @include game-section();
+}

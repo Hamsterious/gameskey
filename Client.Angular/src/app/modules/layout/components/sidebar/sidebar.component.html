@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <div id="sidebar" class="menu">
+        <a class="close-btn" (click)="closeNav()">&times;</a>
+        <a [routerLink]="['']" (click)="closeNav()">Home</a>
+        <a [routerLink]="['create']" (click)="closeNav()">Create Game</a>
+        <a [routerLink]="['design/create-game']" (click)="closeNav()">Design: Multi step form</a>
+        <a [routerLink]="['design/game']" (click)="closeNav()">Design: Game mock design</a>
+    </div>
+    <a class="open-btn" (click)="openNav()" style="color: rgb(204, 204, 204);">&#9776;</a>
+</div>
